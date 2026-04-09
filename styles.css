@@ -66,6 +66,7 @@ button{
     background: #ddb667;
     font-size: 18px;
     font-weight: bold;
+    color: black;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 35%);
 }
 
