@@ -22,6 +22,7 @@ main{
     width: 500px;
     display: inline-block;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 35%);
+    animation: blink 0.15s ease-in-out 5;
 }
 
 
@@ -68,7 +69,31 @@ button{
     font-weight: bold;
     color: black;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 35%);
+    box-shadow: inset 0 5px 5px rgba(255, 255, 255, 0.5);
 }
+.btn-animado {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.btn-animado.show {
+  animation: aparecer 0.5s ease forwards;
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink{
+    0%{opacity: 1;}
+    50%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+
 
 a{
     cursor: pointer;
@@ -83,12 +108,15 @@ a:active{
 
 button:hover{
     background: #ddb667;
-    opacity: .5;
+  
 }
 button:active{
     background:#ddb667 ;
-    opacity: .8;
+    transform: scale(0.95);
+    filter: brightness(0.9);
+    
 }
+
 
 
 @media screen and (max-width: 651px){
