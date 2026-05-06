@@ -1,19 +1,5 @@
+
 /*window.onload = function(){
-
-  const logo = document.querySelector('.img-logo');
-  logo.classList.add('blink');
-
-  const botoes = document.querySelectorAll('.btn-animado');
-
-  botoes.forEach((btn, index) => {
-    setTimeout(() => {
-      btn.classList.add('show');
-    }, index * 300);
-  });
-
-}*/
-
-window.onload = function(){
   const logo = document.querySelector('.img-logo');
   logo.classList.add('blink');
   
@@ -26,4 +12,24 @@ window.onload = function(){
       btn.classList.add('show');
     }, index * 300);
   });
+}*/
+
+window.onload = function(){
+    const logo = document.querySelector('.img-logo');
+    logo.classList.add('blink');
+    
+    const botoes = document.querySelectorAll('.btn-animado');
+    botoes.forEach((btn, index) => {
+        setTimeout(() => {
+            btn.classList.add('show');
+        }, index * 300);
+        
+        // ✅ Efeito de pulo ao clicar
+        btn.addEventListener('click', function(e) {
+            this.classList.add('pulo-ativo');
+            setTimeout(() => {
+                this.classList.remove('pulo-ativo');
+            }, 600);
+        });
+    });
 }
